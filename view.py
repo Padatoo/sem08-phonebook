@@ -1,10 +1,10 @@
-import time
+#import time
 import validate
 
 # Функция главного меню
 def main_menu():
     print('---')
-    time.sleep(1)
+    #time.sleep(1)
     print('Главное меню')
     mode = input('1. Записать данные в книгу\n2. Показать всю книгу\n3. Поиск записи\n4. Выход\nВведите 1, 2, 3 и 4: ')
     if mode in '1234':
@@ -22,7 +22,7 @@ def write_data():
         if not validate.check_phone(phone):
             print('Телефон введен неверно. Попробуйте снова.')
     phone_record.append(phone)
-    description = input('Введите описание: ')
+    description = input('Введите описание или нажмите Enter чтобы пропустить этот шаг: ')
     if description:
         phone_record.append(description)
     print(f'Запись внесена в книгу: {str.join(", ", phone_record)}')
